@@ -11,6 +11,16 @@
   <img src="https://img.shields.io/badge/DAYS_SURVIVED-Year_1-1a1a1a?style=for-the-badge&logo=skullandcrossbones&logoColor=8B0000" />
 </p>
 
+<p align="center">
+  <a href="https://store.steampowered.com/app/108600">
+    <img src="https://cdn.akamai.steamstatic.com/steam/apps/108600/header.jpg" alt="Project Zomboid" width="460" />
+  </a>
+</p>
+
+<p align="center">
+  <img src="./assets/zombie-walk.svg" alt="zombie walking" width="640" />
+</p>
+
 ---
 
 ### 📻 Survivor Log
