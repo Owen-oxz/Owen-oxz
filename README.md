@@ -1,4 +1,4 @@
-<h1 align="center">☣️ Warning ☣️</h1>
+<h1 align="center">☣️ SEVEN.exe ☣️</h1>
 <h3 align="center">Day 1 — Computer Engineering Survivor | Building "projectsomboi"</h3>
 
 <p align="center">
@@ -18,7 +18,7 @@
 </p>
 
 <p align="center">
-
+  <img src="./assets/zombie-walk.svg" alt="zombie walking" width="640" />
 </p>
 
 ---
@@ -41,27 +41,6 @@
 - 🔨 Building a stronghold (project) called **projectsomboi**
 - 🩸 Loves coding, even when it feels like being chased by bugs
 - 🧟 Motto: "Compile first, panic later."
-
----
-
-### 🎒 Inventory (Tech Stack)
-
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=c,cpp,python,java,js,html,css,git,vscode,linux" />
-</p>
-
----
-
-### 📟 Stats Tracker
-
-<p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=dark&hide_border=true&title_color=8B0000&icon_color=8B0000&text_color=cccccc&bg_color=0d1117" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=dark&hide_border=true&title_color=8B0000&text_color=cccccc&bg_color=0d1117" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_USERNAME&theme=dark&hide_border=true&background=0D1117&stroke=8B0000&ring=8B0000&fire=8B0000&currStreakLabel=cccccc" />
-</p>
 
 ---
 
