@@ -1,4 +1,4 @@
-<h1 align="center">☣️ SEVEN.exe ☣️</h1>
+<h1 align="center">☣️ Warning ☣️</h1>
 <h3 align="center">Day 1 — Computer Engineering Survivor | Building "projectsomboi"</h3>
 
 <p align="center">
@@ -18,7 +18,7 @@
 </p>
 
 <p align="center">
-  <img src="./assets/zombie-walk.svg" alt="zombie walking" width="640" />
+
 </p>
 
 ---
