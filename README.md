@@ -1,15 +1,71 @@
-<div align="center"> <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=Welcome%20to%20my%20GitHub%20Profile&fontSize=38&fontColor=ffffff&animation=twinkling&fontAlignY=40" width="100%"/> <br> <table> <tr> <td align="center" width="160"> <img src="https://user-images.githubusercontent.com/55389276/140866485-8fb1c876-9a8f-4d6a-98dc-08c4981eaf70.gif" width="90"/><br> i love code </td> <td width="40"></td> <td align="center" width="160"> <!-- 🦄 placeholder — see instructions below to swap in a real moving gif --> <img src="https://img.shields.io/badge/%F0%9F%A6%84-unicorn-ff69b4?style=for-the-badge&labelColor=111111" /><br> and unicorns </td> </tr> </table> <br> <img src="https://img.shields.io/badge/%F0%9F%9A%A7_UNDER_CONSTRUCTION_%F0%9F%9A%A7-FFD500?style=for-the-badge&labelColor=111111" />
+<h1 align="center">☣️ SEVEN.exe ☣️</h1>
+<h3 align="center">Day 1 — Computer Engineering Survivor | Building "projectsomboi"</h3>
 
-<br><br>
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Courier+New&size=22&pause=1000&color=8B0000&center=true&vCenter=true&width=600&lines=Survivor+Log+%23001+...;Status%3A+STILL+ALIVE;Skill%3A+Coding+%2B%2B;Currently+debugging...+send+help;Base%3A+projectsomboi+HQ" alt="Typing SVG" />
+</p>
 
-check out my latest app: <b><a href="#">Supercharge</a></b> 🔥
+<p align="center">
+  <img src="https://img.shields.io/badge/HEALTH-100%25-8B0000?style=for-the-badge&logo=heartbeat&logoColor=white" />
+  <img src="https://img.shields.io/badge/INFECTION-0%25-2f3e2f?style=for-the-badge&logo=biohazard&logoColor=white" />
+  <img src="https://img.shields.io/badge/DAYS_SURVIVED-Year_1-1a1a1a?style=for-the-badge&logo=skullandcrossbones&logoColor=8B0000" />
+</p>
 
-and my <a href="#">latest blog post</a> 🔥
+---
 
-<br><br>
+### 📻 Survivor Log
 
-<img src="https://komarev.com/ghpvc/?username=YOUR_USERNAME&label=HITS+TODAY&color=e30000&style=flat-square" /> <a href="https://jigsaw.w3.org/css-validator/"><img src="https://jigsaw.w3.org/css-validator/images/vcss-blue" /></a> <a href="https://validator.w3.org/"><img src="https://www.w3.org/Icons/valid-html401" /></a> <img src="https://img.shields.io/badge/Windows95-.com-0058C8?style=flat-square&logo=windows95&logoColor=white" /> <img src="https://img.shields.io/badge/Get-Acrobat%20Reader-CC0000?style=flat-square&logo=adobeacrobatreader&logoColor=white" />
+```diff
++ Name       : Seven
++ Occupation : Computer Engineering Student (Year 1)
++ Base Camp  : projectsomboi
+- Weakness   : Forgets to save before the PC crashes
++ Perk       : Code Enthusiast
++ Trait      : Prefers to go solo, reads error messages all night
+```
 
-<br><br>
+> "In the beginning there were bugs. Then there was Seven.  
+> Seven typed. Seven learned. Seven survived."
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=0,2,5,12,20&height=50&animation=fadeIn" width="100%"/> </div>
+- ☣️ First-year Computer Engineering student — survives (barely) every semester
+- 🔨 Building a stronghold (project) called **projectsomboi**
+- 🩸 Loves coding, even when it feels like being chased by bugs
+- 🧟 Motto: "Compile first, panic later."
+
+---
+
+### 🎒 Inventory (Tech Stack)
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=c,cpp,python,java,js,html,css,git,vscode,linux" />
+</p>
+
+---
+
+### 📟 Stats Tracker
+
+<p align="center">
+  <img height="165" src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=dark&hide_border=true&title_color=8B0000&icon_color=8B0000&text_color=cccccc&bg_color=0d1117" />
+  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=dark&hide_border=true&title_color=8B0000&text_color=cccccc&bg_color=0d1117" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_USERNAME&theme=dark&hide_border=true&background=0D1117&stroke=8B0000&ring=8B0000&fire=8B0000&currStreakLabel=cccccc" />
+</p>
+
+---
+
+### 📡 Radio Frequency (Contact)
+
+<p align="center">
+  <a href="https://github.com/YOUR_USERNAME"><img src="https://img.shields.io/badge/GitHub-1a1a1a?style=for-the-badge&logo=github&logoColor=8B0000" /></a>
+  <a href="mailto:YOUR_EMAIL"><img src="https://img.shields.io/badge/Email-1a1a1a?style=for-the-badge&logo=gmail&logoColor=8B0000" /></a>
+</p>
+
+---
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=YOUR_USERNAME&label=Survivors+who+found+this+base&color=8B0000&style=for-the-badge" />
+</p>
+
+<p align="center"><i>☣️ "Still alive... still coding." — projectsomboi HQ ☣️</i></p>
