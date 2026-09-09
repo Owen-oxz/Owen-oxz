@@ -17,9 +17,7 @@
   </a>
 </p>
 
-<p align="center">
-  <img src="./assets/zombie-walk.svg" alt="zombie walking" width="640" />
-</p>
+
 
 ---
 
