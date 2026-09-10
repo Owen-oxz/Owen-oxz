@@ -1,111 +1,105 @@
-<!doctype html>
-<html lang="th">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>เว็บไซต์ของฉัน</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
-
-<!-- ==========================================================================
-     แก้เฉพาะในกล่องนี้ก็พอ ส่วนอื่นของไฟล์ไม่ต้องแตะก็ได้
-     ทุกช่องมีคำอธิบายกำกับว่าใส่อะไร
-     ========================================================================== -->
-<script>
-const ME = {
-
-  // GitHub username ของคุณ ใช้ดึงรูปโปรไฟล์มาแสดงอัตโนมัติ ไม่ต้องอัปโหลดรูปเอง
-  github: "Owen-oxz",
-
-  // ชื่อที่ต้องการให้แสดง ใช้ชื่อเล่นได้
-  name: "Phongphat Mokpha",
-
-  // บอกว่าคุณคือใคร สั้น ๆ
-  role: "นักศึกษาวิศวกรรมคอมพิวเตอร์ ปี 1 · มทร.อีสาน",
-
-  // หนึ่งประโยคว่าคุณสนใจสร้างอะไร เขียนให้เจาะจง อย่าเขียนกว้าง ๆ
-  // ไม่ดี: "รักการเขียนโปรแกรม"   ดี: "อยากทำระบบรดน้ำต้นไม้ที่ดูพยากรณ์อากาศก่อนรดน้ำ"
-  tagline: "i want create rich man",
-
-  // แนะนำตัว 2-3 บรรทัด ว่ามาจากไหน สนใจอะไร กำลังจะไปทางไหน
-  about: "am from thailand i would like to work at AMD",
-
-  // กำลังเรียนรู้อะไรอยู่ตอนนี้ ใส่ได้ 2-5 รายการ
-  learning: [
-    "พื้นฐานอินเทอร์เน็ตและบริการออนไลน์",
-    "HTML และ CSS",
-    "การใช้ Git และ GitHub",
-  ],
-
-  // ผลงาน ปี 1 เทอมแรกยังไม่มีก็ไม่เป็นไร ปล่อยว่างไว้ได้ หน้าเว็บจะขึ้นข้อความให้เอง
-  // เมื่อมีงานแล้วค่อยเพิ่มทีละชิ้น เช่น
-  // { title: "เครื่องวัดอุณหภูมิห้อง", desc: "ใช้ Arduino กับเซนเซอร์ DHT11", url: "" },
-  works: [],
-
-  // ช่องทางติดต่อ ใช้ลิงก์สาธารณะเท่านั้น อย่าใส่เบอร์โทรหรืออีเมลส่วนตัว
-  links: [
-    { label: "GitHub", url: "https://github.com/Owen-oxz" },
-  ],
-
-  // ธีมสี เลือกหนึ่งอย่าง: "ocean" | "sunset" | "forest" | "grape" | "mono" | "mono-light"
-  theme: "ocean",
-
-};
-</script>
-
+<meta charset="UTF-8">
+<title>SEVEN.exe</title>
 <style>
-/* ---------- สีพื้นฐาน ทุกธีมใช้ร่วมกัน ---------- */
-:root {
-  --bg:#0b1020; --line:#24304f; --text:#e8edf7; --muted:#93a1c0;
-  --surface:rgba(255,255,255,.05);      /* พื้นของการ์ดผลงานและแผงข้อมูล */
-  --mono: ui-monospace,"SF Mono",Menlo,Consolas,monospace;
-}
+  body {
+    background-color: #0d0d0d;
+    color: #e0e0e0;
+    font-family: 'Courier New', monospace;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  h1 { color: #8B0000; font-size: 2.2em; }
+  h3 { color: #cccccc; font-weight: normal; }
+  img.banner { width: 460px; max-width: 90%; border-radius: 8px; margin: 20px 0; }
+  .badges img { margin: 4px; }
+  pre {
+    background: #1a1a1a;
+    color: #2ecc71;
+    text-align: left;
+    display: inline-block;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px auto;
+  }
+  pre .minus { color: #e74c3c; }
+  blockquote {
+    color: #999;
+    font-style: italic;
+    border-left: 3px solid #8B0000;
+    padding-left: 15px;
+    max-width: 500px;
+    margin: 20px auto;
+    text-align: left;
+  }
+  ul { list-style: none; padding: 0; max-width: 500px; margin: 0 auto; text-align: left; }
+  ul li { margin: 8px 0; }
+  hr { border-color: #333; max-width: 600px; margin: 30px auto; }
+  a img { transition: 0.2s; }
+  a img:hover { opacity: 0.8; }
+</style>
+</head>
+<body>
 
-/* ---------- ธีมสี เลือกได้ที่ช่อง theme ด้านบน ไม่ต้องแก้ตรงนี้ ----------
-   ห้าธีมแรกเปลี่ยนแค่สีเน้นกับแสงพื้นหลัง พื้นหลังยังเข้มเหมือนกันหมด
-   จึงไม่มีทางเลือกจนอ่านไม่ออก                                          */
-:root,
-[data-theme="ocean"]  { --accent:#38bdf8; --accent-soft:#0ea5e9; --glow1:#1d2a52; --glow2:#10305c; }
-[data-theme="sunset"] { --accent:#fb923c; --accent-soft:#f97316; --glow1:#4a2418; --glow2:#5c2b10; }
-[data-theme="forest"] { --accent:#34d399; --accent-soft:#10b981; --glow1:#14342a; --glow2:#0f3d2e; }
-[data-theme="grape"]  { --accent:#c084fc; --accent-soft:#a855f7; --glow1:#2e1d52; --glow2:#3d1a5c; }
-[data-theme="mono"]   { --accent:#e2e8f0; --accent-soft:#cbd5e1; --glow1:#1e293b; --glow2:#0f172a; }
+<h1>☣️ SEVEN.exe ☣️</h1>
+<h3>Day 1 — Computer Engineering Survivor | Building "projectsomboi"</h3>
 
-/* ธีมเดียวที่พลิกเป็นพื้นสว่าง จึงต้องเขียนยาวกว่าเพื่อน
-   เพราะต้องกลับค่าพื้นหลัง ตัวอักษร เส้น และพื้นการ์ดใหม่ทั้งชุด */
-[data-theme="mono-light"] {
-  --accent:#334155; --accent-soft:#475569; --glow1:#dbe3ee; --glow2:#e6ebf3;
-  --bg:#f7f9fc; --line:#ccd6e4; --text:#0f172a; --muted:#52627d;
-  --surface:rgba(15,23,42,.04);
-}
+<img src="https://readme-typing-svg.demolab.com?font=Courier+New&size=22&pause=1000&color=8B0000&center=true&vCenter=true&width=600&lines=Survivor+Log+%23001+...;Status%3A+STILL+ALIVE;Skill%3A+Coding+%2B%2B;Currently+debugging...+send+help;Base%3A+projectsomboi+HQ" alt="Typing SVG" />
 
-*{ box-sizing:border-box }
+<div class="badges">
+  <img src="https://img.shields.io/badge/HEALTH-100%25-8B0000?style=for-the-badge&logo=heartbeat&logoColor=white" />
+  <img src="https://img.shields.io/badge/INFECTION-0%25-2f3e2f?style=for-the-badge&logo=biohazard&logoColor=white" />
+  <img src="https://img.shields.io/badge/DAYS_SURVIVED-Year_1-1a1a1a?style=for-the-badge&logo=skullandcrossbones&logoColor=8B0000" />
+</div>
 
-body{
-  margin:0; min-height:100vh; color:var(--text);
-  font-family:"Segoe UI","Noto Sans Thai",system-ui,sans-serif;
-  line-height:1.75;                       /* ระยะห่างระหว่างบรรทัด อ่านง่ายขึ้นมาก */
-  background:
-    radial-gradient(1000px 460px at 12% -10%, var(--glow1) 0, transparent 60%),
-    radial-gradient(820px 400px at 92% 0,   var(--glow2) 0, transparent 55%),
-    var(--bg);
-}
+<a href="https://store.steampowered.com/app/108600">
+  <img class="banner" src="https://cdn.akamai.steamstatic.com/steam/apps/108600/header.jpg" alt="Project Zomboid" />
+</a>
 
-/* ความกว้างจำกัดไว้ ไม่ให้บรรทัดยาวจนตาไล่ไม่ทัน */
-.wrap{ max-width:760px; margin:0 auto; padding:0 22px 80px }
+<hr>
 
-/* ---------- ส่วนหัว ---------- */
-.hero{ display:flex; gap:22px; align-items:center; padding:64px 0 8px; flex-wrap:wrap }
-.avatar{
-  width:96px; height:96px; border-radius:50%;
-  border:2px solid var(--accent); object-fit:cover; flex-shrink:0;
-  background:var(--surface);
-}
-/* ใช้แทนรูปโปรไฟล์ เมื่อโหลดรูปจาก GitHub ไม่สำเร็จ */
-.avatar-fallback{
-  width:96px; height:96px; border-radius:50%; flex-shrink:0;
-  border:2px solid var(--accent); background:var(--surface);
-  display:flex; align-items:center; justify-content:center;
-  font-size:38px; font-weight:600; color:var(--accent);
+<h3>📻 Survivor Log</h3>
+
+<pre>
++ Name       : Seven
++ Occupation : Computer Engineering Student (Year 1)
++ Base Camp  : projectsomboi
+<span class="minus">- Weakness   : Forgets to save before the PC crashes</span>
++ Perk       : Code Enthusiast
++ Trait      : Prefers to go solo, reads error messages all night
+</pre>
+
+<blockquote>
+"In the beginning there were bugs. Then there was Seven.<br>
+Seven typed. Seven learned. Seven survived."
+</blockquote>
+
+<ul>
+  <li>☣️ First-year Computer Engineering student — survives (barely) every semester</li>
+  <li>🔨 Building a stronghold (project) called <b>projectsomboi</b></li>
+  <li>🩸 Loves coding, even when it feels like being chased by bugs</li>
+  <li>🧟 Motto: "Compile first, panic later."</li>
+</ul>
+
+<hr>
+
+<h3>📡 Radio Frequency (Contact)</h3>
+
+<p>
+  <a href="https://github.com/Owen-oxz"><img src="https://img.shields.io/badge/GitHub-1a1a1a?style=for-the-badge&logo=github&logoColor=8B0000" /></a>
+  <a href="mailto:YOUR_EMAIL"><img src="https://img.shields.io/badge/Email-1a1a1a?style=for-the-badge&logo=gmail&logoColor=8B0000" /></a>
+</p>
+
+<hr>
+
+<img src="https://komarev.com/ghpvc/?username=Owen-oxz&label=Survivors+who+found+this+base&color=8B0000&style=for-the-badge" />
+
+<p><i>☣️ "Still alive... still coding." — projectsomboi HQ ☣️</i></p>
+
+</body>
+</html>  font-size:38px; font-weight:600; color:var(--accent);
 }
 .hero-text{ flex:1; min-width:240px }
 .role{
