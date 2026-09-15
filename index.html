@@ -1,39 +1,361 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
 <meta charset="UTF-8">
-<title>Phongphat Mokpha</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEVEN.exe — Survivor Log</title>
 <style>
-  body {
-    background-color: #0d0d0d;
-    color: #e0e0e0;
-    font-family: 'Courier New', monospace;
-    text-align: center;
-    padding: 40px 20px;
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Special+Elite&display=swap');
+
+  :root{
+    --bg: #0d0f0c;
+    --panel: #14170f;
+    --blood: #8b0000;
+    --blood-bright: #b3241f;
+    --toxic: #4a5a3a;
+    --toxic-bright: #7c9a5e;
+    --paper: #d8d4c4;
+    --paper-dim: #8a8778;
+    --line: #2a2d24;
   }
-  h1 { color: #8B0000; font-size: 2.2em; }
-  h3 { color: #cccccc; font-weight: normal; }
-  img.banner { width: 460px; max-width: 90%; border-radius: 8px; margin: 20px 0; }
-  .badges img { margin: 4px; }
-  pre {
-    background: #1a1a1a;
-    color: #2ecc71;
-    text-align: left;
-    display: inline-block;
-    padding: 20px;
-    border-radius: 8px;
-    margin: 20px auto;
+
+  *{ box-sizing: border-box; margin:0; padding:0; }
+
+  body{
+    background: var(--bg);
+    background-image:
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 3px);
+    color: var(--paper);
+    font-family: 'IBM Plex Mono', monospace;
+    line-height: 1.6;
+    padding: 40px 20px 80px;
   }
-  pre .minus { color: #e74c3c; }
-  blockquote {
-    color: #999;
+
+  .wrap{
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  /* header */
+  header{
+    text-align:center;
+    margin-bottom: 36px;
+  }
+
+  .biohazard{
+    font-size: 34px;
+    display:block;
+    margin-bottom: 6px;
+    filter: drop-shadow(0 0 8px rgba(139,0,0,0.5));
+  }
+
+  h1{
+    font-family: 'Special Elite', monospace;
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: var(--blood-bright);
+    text-shadow: 0 0 12px rgba(139,0,0,0.4);
+  }
+
+  .subtitle{
+    margin-top: 8px;
+    color: var(--paper-dim);
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+
+  .subtitle .accent{ color: var(--toxic-bright); }
+
+  /* typing line */
+  .terminal{
+    margin: 26px 0;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--blood);
+    padding: 14px 18px;
+    font-size: 14px;
+    color: var(--toxic-bright);
+    min-height: 22px;
+  }
+
+  .terminal::before{
+    content: "> ";
+    color: var(--blood-bright);
+  }
+
+  .cursor{
+    display:inline-block;
+    width: 8px;
+    height: 14px;
+    background: var(--toxic-bright);
+    margin-left: 2px;
+    animation: blink 1s steps(1) infinite;
+    vertical-align: middle;
+  }
+
+  @keyframes blink{ 50%{ opacity:0; } }
+
+  /* status badges */
+  .badges{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap: 10px;
+    margin: 28px 0;
+  }
+
+  .badge{
+    border: 1px solid var(--line);
+    background: var(--panel);
+    padding: 8px 14px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    display:flex;
+    align-items:center;
+    gap: 8px;
+  }
+
+  .badge .dot{
+    width: 8px; height: 8px; border-radius: 50%;
+    flex-shrink:0;
+  }
+
+  .badge.health .dot{ background: var(--blood-bright); box-shadow: 0 0 6px var(--blood-bright); }
+  .badge.infection .dot{ background: var(--toxic-bright); box-shadow: 0 0 6px var(--toxic-bright); }
+  .badge.days .dot{ background: var(--paper-dim); }
+
+  .badge b{ color: var(--paper); font-weight: 600; }
+
+  /* cover art */
+  .cover{
+    display:block;
+    margin: 0 auto 40px;
+    max-width: 460px;
+    width: 100%;
+    border: 1px solid var(--line);
+    filter: grayscale(15%) contrast(105%);
+    transition: filter .25s ease;
+  }
+  .cover:hover{ filter: grayscale(0%) contrast(110%); }
+
+  hr.divider{
+    border: none;
+    border-top: 1px dashed var(--line);
+    margin: 40px 0;
+  }
+
+  /* section titles */
+  .section-label{
+    font-family: 'Special Elite', monospace;
+    color: var(--blood-bright);
+    font-size: 16px;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+  }
+
+  /* survivor log card */
+  .log-card{
+    background: var(--panel);
+    border: 1px solid var(--line);
+    padding: 20px 22px;
+    font-size: 13.5px;
+  }
+
+  .log-line{
+    display:flex;
+    gap: 10px;
+    padding: 3px 0;
+  }
+
+  .log-line .sign{
+    width: 14px;
+    flex-shrink:0;
+    font-weight:700;
+  }
+
+  .log-line.add .sign{ color: var(--toxic-bright); }
+  .log-line.rem .sign{ color: var(--blood-bright); }
+
+  .log-line .key{ color: var(--paper-dim); min-width: 100px; }
+  .log-line .val{ color: var(--paper); }
+
+  blockquote{
+    margin: 24px 0;
+    padding: 14px 20px;
+    border-left: 2px solid var(--toxic);
+    color: var(--paper-dim);
     font-style: italic;
-    border-left: 3px solid #8B0000;
-    padding-left: 15px;
-    max-width: 500px;
-    margin: 20px auto;
-    text-align: left;
+    font-size: 13.5px;
   }
+
+  ul.notes{
+    list-style: none;
+    margin-top: 18px;
+  }
+
+  ul.notes li{
+    padding: 6px 0 6px 4px;
+    font-size: 13.5px;
+    color: var(--paper);
+    border-bottom: 1px solid var(--line);
+  }
+
+  ul.notes li:last-child{ border-bottom: none; }
+
+  .emoji{ margin-right: 8px; }
+
+  /* contact */
+  .contact{
+    display:flex;
+    justify-content:center;
+    gap: 14px;
+    margin-top: 18px;
+  }
+
+  .contact a{
+    text-decoration:none;
+    color: var(--paper);
+    background: var(--panel);
+    border: 1px solid var(--line);
+    padding: 10px 18px;
+    font-size: 12.5px;
+    letter-spacing: 0.5px;
+    display:flex;
+    align-items:center;
+    gap: 8px;
+    transition: border-color .2s ease, color .2s ease;
+  }
+
+  .contact a:hover{
+    border-color: var(--blood-bright);
+    color: var(--blood-bright);
+  }
+
+  /* footer / visitor counter */
+  .visitor{
+    text-align:center;
+    margin-top: 44px;
+  }
+
+  .visitor img{
+    filter: saturate(0.9);
+  }
+
+  footer{
+    text-align:center;
+    margin-top: 28px;
+    color: var(--paper-dim);
+    font-size: 12px;
+    font-style: italic;
+  }
+
+  @media (max-width: 480px){
+    h1{ font-size: 22px; }
+    .badges{ gap: 8px; }
+    .badge{ font-size: 10px; padding: 6px 10px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <span class="biohazard">☣️</span>
+    <h1>SEVEN.exe</h1>
+    <div class="subtitle">Day 1 — <span class="accent">Computer Engineering Survivor</span> · Building "projectsomboi"</div>
+  </header>
+
+  <div class="terminal" id="typingLine">Survivor Log #001 ...<span class="cursor"></span></div>
+
+  <div class="badges">
+    <div class="badge health"><span class="dot"></span>HEALTH: <b>100%</b></div>
+    <div class="badge infection"><span class="dot"></span>INFECTION: <b>0%</b></div>
+    <div class="badge days"><span class="dot"></span>DAYS SURVIVED: <b>Year 1</b></div>
+  </div>
+
+  <a href="https://store.steampowered.com/app/108600" target="_blank" rel="noopener">
+    <img class="cover" src="https://cdn.akamai.steamstatic.com/steam/apps/108600/header.jpg" alt="Project Zomboid">
+  </a>
+
+  <hr class="divider">
+
+  <div class="section-label">📻 Survivor Log</div>
+
+  <div class="log-card">
+    <div class="log-line add"><span class="sign">+</span><span class="key">Name</span><span class="val">: Seven</span></div>
+    <div class="log-line add"><span class="sign">+</span><span class="key">Occupation</span><span class="val">: Computer Engineering Student (Year 1)</span></div>
+    <div class="log-line add"><span class="sign">+</span><span class="key">Base Camp</span><span class="val">: projectsomboi</span></div>
+    <div class="log-line rem"><span class="sign">-</span><span class="key">Weakness</span><span class="val">: Forgets to save before the PC crashes</span></div>
+    <div class="log-line add"><span class="sign">+</span><span class="key">Perk</span><span class="val">: Code Enthusiast</span></div>
+    <div class="log-line add"><span class="sign">+</span><span class="key">Trait</span><span class="val">: Prefers to go solo, reads error messages all night</span></div>
+  </div>
+
+  <blockquote>
+    "In the beginning there were bugs. Then there was Seven.<br>
+    Seven typed. Seven learned. Seven survived."
+  </blockquote>
+
+  <ul class="notes">
+    <li><span class="emoji">☣️</span>First-year Computer Engineering student — survives (barely) every semester</li>
+    <li><span class="emoji">🔨</span>Building a stronghold (project) called <b>projectsomboi</b></li>
+    <li><span class="emoji">🩸</span>Loves coding, even when it feels like being chased by bugs</li>
+    <li><span class="emoji">🧟</span>Motto: "Compile first, panic later."</li>
+  </ul>
+
+  <hr class="divider">
+
+  <div class="section-label">📡 Radio Frequency (Contact)</div>
+
+  <div class="contact">
+    <a href="https://github.com/YOUR_USERNAME" target="_blank" rel="noopener">🐙 GitHub</a>
+    <a href="mailto:YOUR_EMAIL">✉️ Email</a>
+  </div>
+
+  <div class="visitor">
+    <img src="https://komarev.com/ghpvc/?username=YOUR_USERNAME&label=Survivors+who+found+this+base&color=8B0000&style=for-the-badge" alt="visitor count">
+  </div>
+
+  <footer>☣️ "Still alive... still coding." — projectsomboi HQ ☣️</footer>
+
+</div>
+
+<script>
+  // simple looping typewriter for the terminal line
+  const lines = [
+    "Survivor Log #001 ...",
+    "Status: STILL ALIVE",
+    "Skill: Coding ++",
+    "Currently debugging... send help",
+    "Base: projectsomboi HQ"
+  ];
+  const el = document.getElementById('typingLine');
+  let li = 0, ci = 0, deleting = false;
+
+  function tick(){
+    const full = lines[li];
+    if(!deleting){
+      ci++;
+      if(ci > full.length){
+        deleting = true;
+        setTimeout(tick, 1200);
+        return;
+      }
+    } else {
+      ci--;
+      if(ci < 0){
+        deleting = false;
+        li = (li+1) % lines.length;
+        ci = 0;
+      }
+    }
+    el.innerHTML = full.slice(0, ci) + '<span class="cursor"></span>';
+    setTimeout(tick, deleting ? 30 : 60);
+  }
+  tick();
+</script>
+
+</body>
+</html>
   ul { list-style: none; padding: 0; max-width: 500px; margin: 0 auto; text-align: left; }
   ul li { margin: 8px 0; }
   hr { border-color: #333; max-width: 600px; margin: 30px auto; }
